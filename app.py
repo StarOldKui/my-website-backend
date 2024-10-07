@@ -2,9 +2,14 @@
 
 import aws_cdk as cdk
 
-from cdk.my_website_backend_stack import MyWebsiteBackendStack
+from cdk.codepipeline_stack import CodePipelineStack
 
 app = cdk.App()
-MyWebsiteBackendStack(app, "MyWebsiteBackendStack")
+
+CodePipelineStack(
+    app,
+    "CodePipelineStack",
+    env=cdk.Environment(account="328092891197", region="us-east-2")
+)
 
 app.synth()
