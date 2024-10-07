@@ -1,9 +1,19 @@
-import aws_cdk as cdk
+import aws_cdk
+from aws_cdk import Stack, Stage
 from aws_cdk.pipelines import CodePipeline, CodePipelineSource, ShellStep
 from constructs import Construct
 
+from cdk.resource_stack import ResourceStack
 
-class CodePipelineStack(cdk.Stack):
+
+class ResourceStage(Stage):
+    def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
+        super().__init__(scope, construct_id, **kwargs)
+
+        resrouceStack = ResourceStack(self, "ResourceStack")
+
+
+class CodePipelineStack(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -27,4 +37,12 @@ class CodePipelineStack(cdk.Stack):
                     "cdk synth",
                 ],
             ),
+        )
+
+        code_pipeline.add_stage(
+            ResourceStage(
+                self,
+                "Deploy",
+                env=aws_cdk.Environment(account="328092891197", region="us-east-2"),
+            )
         )
