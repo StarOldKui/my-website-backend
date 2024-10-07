@@ -10,11 +10,15 @@ from aws_cdk.aws_lambda import (
 )
 from constructs import Construct
 
+from app.utils.env_util import EnvLoader
+
 
 class ResourceStack(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
+
+        EnvLoader()
 
         # Environment variables
         openai_api_key = os.getenv("OPENAI_API_KEY")

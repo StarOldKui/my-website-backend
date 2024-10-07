@@ -4,10 +4,6 @@ import aws_cdk
 
 from cdk.codepipeline_stack import CodePipelineStack
 
-from app.utils.env_util import EnvLoader
-
-EnvLoader()
-
 app = aws_cdk.App()
 
 CodePipelineStack(
