@@ -1,2 +1,11 @@
 aws-cdk-lib==2.161.1
 constructs>=10.0.0,<11.0.0
+langchain
+langchain-pinecone
+langchain_community
+langchain_core
+langchain_experimental
+langchain_openai
+langgraph
+langsmith
+python-dotenv
