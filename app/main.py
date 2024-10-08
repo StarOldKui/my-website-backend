@@ -23,7 +23,7 @@ def lambda_handler(event, context):
 
     # Example parameters to be passed in the Lambda
     model_name = "gpt-4o-mini"
-    input_message = "你好X"
+    input_message = "Hello X"
 
     # Log parameters being used in the request
     logger.info(f"Using model: {model_name}")
@@ -33,7 +33,7 @@ def lambda_handler(event, context):
     model = ChatOpenAI(model=model_name)
 
     messages = [
-        SystemMessage(content="Translate the following from into English"),
+        SystemMessage(content="Translate the following from into Chinese"),
         HumanMessage(content=input_message),
     ]
 
