@@ -1,0 +1,32 @@
+SUMMARY - Backend developer and AWS DevOps specialist with over four years of experience in cloud-native and generative AI application development. Extensive hands-on expertise with AWS platforms, holding multiple AWS cloud certifications. Extensive experience working in English-speaking, multinational teams, with a strong ability to collaborate effectively with global colleagues. Well-versed in Agile development. Proficient in Java and Python, and passionate about exploring and applying new technologies.
+
+SKILLS - Java-based Backend Development & AI Application Development - Proficient in data structures, design patterns, networking, IO, multithreading, unit testing, and JVM internals. Experienced with the Spring ecosystem (Spring Boot, Spring Cloud) and familiar with its source code. Experienced with ORM frameworks (Hibernate, MyBatis). Worked with various databases, including relational (MySQL), non-relational (AWS DynamoDB), key-value stores (Redis). Skilled in development tools (Git, Maven, Flyway) and frontend-backend interface specifications (OpenAPI).
+
+SKILLS - AI Technologies and Frameworks -Proficient in LangChain framework and its ecosystem (LCEL, Agent, RAG, Memory, LangGraph, LangSmith). Skilled in debugging and evaluation with LangSmith and working with vector databases such as AWS OpenSearch and Pinecone. Proficient in using AWS SageMaker and Bedrock for deploying machine learning models. Fundamental knowledge of PyTorch and deep learning theory.
+
+SKILLS - Cloud Computing & Containerization Technologies - Skilled in building efficient cloud-native applications using AWS CloudFormation, CodePipeline, S3, EC2, Lambda, CDK, and more for automated deployment and resource management. As an AWS DevOps specialist, designed CI/CD pipelines, managed infrastructure as code, optimized cloud resources, and ensured application scalability and high availability. Expertise in Docker, Kubernetes, and AWS ECS. Experienced in setting up and managing Kubernetes clusters on AWS.
+
+SKILLS - MySQL & Quarkus Framework -Proficient in SQL optimization, index optimization, and performance tuning. Understanding of database engine mechanisms, transactions, and performance tuning. Proficient in the Quarkus framework and its integration with AWS services. Practical experience solving integration and performance optimization challenges in cloud-native application development, especially using GraalVM for native image building.
+
+EDUCATION - University of Melbourne – Bachelor's Degree in Computer Systems and Software (March 2016 - December 2019)
+
+CERTIFICATION - I am AWS Certified DevOps Engineer - Professional (October 2023).
+CERTIFICATION - I am AWS Certified SysOps Administrator - Associate (October 2022).
+CERTIFICATION - I am AWS Certified Solutions Architect - Associate (June 2022).
+CERTIFICATION - I am AWS Certified Developer - Associate (October 2021).
+
+WORK EXPERIENCE - PwC - Software Engineer (June 2021 - June 2024) -Led cloud-native development, AWS architecture design, and machine learning integration using LangChain.
+
+WORK EXPERIENCE - Kindo - Software Engineer (March 2020 - June 2021) - Developed scalable systems for medical data analysis, optimized MySQL databases, and enhanced backend processes using Java.
+
+PERSONAL BACKGROUND - I am 27 years old, originally from Shenzhen, China. I have a passion for computers, music, and programming. I enjoy staying on top of new technology trends and applying them in my work.
+
+PERSONAL BACKGROUND - I am married, and my visa is a 309 visa. I expect to obtain PR next year, and my wife has been a PR for many years.
+
+PERSONAL BACKGROUND - I arrived in Australia on 12 September 2024 and am currently actively looking for job opportunities. I am available to start working immediately.
+
+PERSONAL BACKGROUND - I currently live at 100 Lorimer Street, Docklands, Melbourne, 3008.
+
+PERSONAL BACKGROUND - My expected annual salary is 120,000 AUD.
+
+PERSONAL BACKGROUND - I am Ruiyan Xia. My English name is Alen. People can call me Alen Xia.

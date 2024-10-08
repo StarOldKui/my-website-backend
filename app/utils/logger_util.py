@@ -6,17 +6,14 @@ class LoggerUtil:
     @staticmethod
     def get_logger():
         logger = logging.getLogger()
+        if not logger.hasHandlers():
+            # Make sure to send logs to stdout (picked up by CloudWatch)
+            handler = logging.StreamHandler(sys.stdout)
+            formatter = logging.Formatter(
+                "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+            )
+            handler.setFormatter(formatter)
+            logger.addHandler(handler)
 
-        # Used for local testing
-        logging.basicConfig(
-            level=logging.INFO,
-            format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-            handlers=[logging.StreamHandler(stream=sys.stdout)],
-        )
-
-        # Get the logger for httpx
-        httpx_logger = logging.getLogger("httpx")
-        # Set the logging level to WARNING to suppress INFO logs
-        httpx_logger.setLevel(logging.WARNING)
-
+        logger.setLevel(logging.INFO)
         return logger

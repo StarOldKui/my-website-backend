@@ -20,6 +20,9 @@ LANGCHAIN_TRACING_V2=true
 LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
 LANGCHAIN_API_KEY=...
 LANGCHAIN_PROJECT=my-website-backend
+
+# Pinecone
+PINECONE_API_KEY=...
 ```
 
 ## 2. Upload Environment Variables to AWS Parameter Store
@@ -58,13 +61,17 @@ This command will:
 ## 4. Deploy to AWS Lambda, Docker, and CI/CD Pipeline Using AWS CDK
 
 This project uses the **AWS Cloud Development Kit (CDK) with Python** to deploy the following components:
+
 - **Lambda function**: Runs a Docker image to process requests.
 - **Docker image**: Built and deployed to AWS Elastic Container Registry (ECR).
-- **CI/CD Pipeline (CodePipeline)**: Automatically builds, tests, and deploys the Lambda function whenever new code is committed to the repository.
+- **CI/CD Pipeline (CodePipeline)**: Automatically builds, tests, and deploys the Lambda function whenever new code is
+  committed to the repository.
 
 #### Initial CDK Deployment
 
-Before automating the deployment process with the CI/CD pipeline, you need to run the initial deployment to set up the required resources (Lambda function, ECR, IAM roles, and CodePipeline). This can be done by running the following command from the project’s root directory:
+Before automating the deployment process with the CI/CD pipeline, you need to run the initial deployment to set up the
+required resources (Lambda function, ECR, IAM roles, and CodePipeline). This can be done by running the following
+command from the project’s root directory:
 
 ```shell
 cdk deploy
@@ -78,7 +85,8 @@ This command will:
 
 **Continuous Deployment via CodePipeline**
 
-Once the initial deployment is complete, any future commits to the main branch will automatically trigger the CI/CD pipeline. AWS CodePipeline will:
+Once the initial deployment is complete, any future commits to the main branch will automatically trigger the CI/CD
+pipeline. AWS CodePipeline will:
 
 - Build the Docker image.
 - Push the image to AWS ECR.
@@ -86,3 +94,19 @@ Once the initial deployment is complete, any future commits to the main branch w
 
 You do not need to run `cdk deploy` manually after this, as the pipeline will handle future deployments automatically.
 
+## 5. Upload Personal Information to Pinecone for RAG
+
+To store personal information for Retrieval-Augmented Generation (RAG), you can use the provided
+upload_my_info_to_pinecone.py script.
+
+This script will read personal information stored in text files (e.g., about_me.txt) and upload the data to Pinecone as
+embeddings, making it accessible for the RAG process.
+
+To run the script, use the following command:
+
+```shell
+python app/configs/vector_store/upload_my_info_to_pinecone.py
+```
+
+Ensure that Pinecone credentials and configuration are set either in your .env file or AWS Parameter Store before
+running this script.

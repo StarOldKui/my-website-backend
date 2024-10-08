@@ -1,4 +1,6 @@
 aws-cdk-lib==2.161.1
+boto3
+botocore
 constructs>=10.0.0,<11.0.0
 langchain
 langchain-pinecone
@@ -8,6 +10,5 @@ langchain_experimental
 langchain_openai
 langgraph
 langsmith
+pinecone
 python-dotenv
-boto3
-botocore
