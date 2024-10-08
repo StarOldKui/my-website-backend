@@ -1,10 +1,10 @@
 from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_openai import ChatOpenAI
 
-from app.utils.env_util import EnvLoader
+from app.configs.load_env_from_parameter_store import load_env_from_parameter_store
 from app.utils.logger_util import LoggerUtil
 
-EnvLoader()
+load_env_from_parameter_store()
 
 logger = LoggerUtil.get_logger()
 

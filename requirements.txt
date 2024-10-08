@@ -9,3 +9,5 @@ langchain_openai
 langgraph
 langsmith
 python-dotenv
+boto3
+botocore
