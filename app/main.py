@@ -1,3 +1,4 @@
+import json
 import time
 import uuid
 from operator import itemgetter
@@ -99,7 +100,13 @@ def lambda_handler(event, context):
     # Load environment variables from AWS Parameter Store
     load_env_from_parameter_store()
 
-    input_message = event["input_message"]
+    # Parse the body to extract input_message
+    try:
+        body = json.loads(event["body"])
+        input_message = body.get("input_message")
+    except (json.JSONDecodeError, KeyError) as e:
+        logger.error(f"Error parsing input message: {e}")
+        return {"statusCode": 400, "body": "Invalid request format"}
 
     record_input_message(input_message)
 
