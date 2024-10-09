@@ -37,6 +37,17 @@ class ResourceStack(Stack):
             )
         )
 
+        # Add permissions to allow Lambda to access DynamoDB
+        docker_function.add_to_role_policy(
+            iam.PolicyStatement(
+                actions=["dynamodb:PutItem"],
+                resources=[
+                    f"arn:aws:dynamodb:{self.region}:{self.account}:table/my-website-backend-input-messages-table"
+                ],
+                effect=iam.Effect.ALLOW,
+            )
+        )
+
         # Set up the Function URL with CORS
         function_url = docker_function.add_function_url(
             auth_type=FunctionUrlAuthType.NONE,
