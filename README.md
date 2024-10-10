@@ -110,3 +110,13 @@ python app/configs/vector_store/upload_my_info_to_pinecone.py
 
 Ensure that Pinecone credentials and configuration are set either in your .env file or AWS Parameter Store before
 running this script.
+
+## 6. Use the Lambda Function URL to invoke the Lambda
+
+Example body:
+
+```json
+{
+  "input_message": "Can you tell me about your background?"
+}
+```

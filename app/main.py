@@ -1,9 +1,11 @@
 import json
 import time
 import uuid
+from datetime import datetime
 from operator import itemgetter
 
 import boto3
+import pytz
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
@@ -73,14 +75,18 @@ def record_input_message(input_message):
         table = dynamodb.Table(table_name)
 
         message_id = str(uuid.uuid4())  # Generate a unique ID for the message
-        timestamp = int(time.time())  # Current timestamp in seconds
+
+        # Get current timestamp in Australia local time (AEST/AEDT)
+        australia_tz = pytz.timezone("Australia/Sydney")
+        current_time = datetime.now(australia_tz)
+        formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
 
         # Store the message in DynamoDB
         table.put_item(
             Item={
                 "message_id ": message_id,
                 "input_message": input_message,
-                "timestamp": timestamp,
+                "timestamp": formatted_time,
             }
         )
         logger.info(f"Input message recorded with ID: {message_id}")
